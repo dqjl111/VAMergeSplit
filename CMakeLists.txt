@@ -30,6 +30,8 @@ qt_add_executable(VAMergeSplit
     src/SplitWidget.cpp
     src/MergeWidget.h
     src/MergeWidget.cpp
+    src/ReplaceAudioWidget.h
+    src/ReplaceAudioWidget.cpp
     src/SegmentModel.h
     src/SegmentModel.cpp
     src/FFmpegRunner.h

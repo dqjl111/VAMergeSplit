@@ -1,6 +1,7 @@
 #include "MainWindow.h"
 
 #include "MergeWidget.h"
+#include "ReplaceAudioWidget.h"
 #include "SplitWidget.h"
 
 #include <QAction>
@@ -24,8 +25,10 @@ MainWindow::MainWindow(QWidget *parent)
     m_tabs = new QTabWidget(this);
     m_splitWidget = new SplitWidget(this);
     m_mergeWidget = new MergeWidget(this);
+    m_replaceAudioWidget = new ReplaceAudioWidget(this);
     m_tabs->addTab(m_splitWidget, QStringLiteral("分割"));
     m_tabs->addTab(m_mergeWidget, QStringLiteral("合并"));
+    m_tabs->addTab(m_replaceAudioWidget, QStringLiteral("音频替换"));
     setCentralWidget(m_tabs);
 
     auto *toolsMenu = menuBar()->addMenu(QStringLiteral("工具(&T)"));
@@ -82,6 +85,7 @@ void MainWindow::applyFfmpegPaths()
     }
     m_splitWidget->setFfmpegPaths(m_ffmpegPath, m_ffprobePath);
     m_mergeWidget->setFfmpegPaths(m_ffmpegPath, m_ffprobePath);
+    m_replaceAudioWidget->setFfmpegPaths(m_ffmpegPath, m_ffprobePath);
 }
 
 void MainWindow::chooseFfmpegDir()

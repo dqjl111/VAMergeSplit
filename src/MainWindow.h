@@ -5,6 +5,7 @@
 class QTabWidget;
 class SplitWidget;
 class MergeWidget;
+class ReplaceAudioWidget;
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
@@ -22,4 +23,5 @@ private:
     QTabWidget *m_tabs = nullptr;
     SplitWidget *m_splitWidget = nullptr;
     MergeWidget *m_mergeWidget = nullptr;
+    ReplaceAudioWidget *m_replaceAudioWidget = nullptr;
 };
